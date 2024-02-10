@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .class-container li {
+            color: blueviolet;
+        }
+
+        li {
+            color: tomato;
+        }
+
+        #fruits-title {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+    </header>
+    <main>
+        <section class="class-container">
+            <h1>My Awesome dom de baba</h1>
+
+            <ul>
+                <li>Jalali set</li>
+                <li>WEEKEND</li>
+                <li>Taylor swift</li>
+                <li>Interworld</li>
+            </ul>
+
+        </section>
+        <section id="fruits-container">
+            <h1 id="fruits-title">Favorite Musicians</h1>
+            <ul>
+                <li>Jalali set</li>
+                <li>WEEKEND</li>
+                <li>Taylor swift</li>
+                <li>Interworld</li>
+            </ul>
+            <h1>People I want to meet</h1>
+            <ul>
+                <li class="changis">WEEKEND</li>
+                <li class="changis">rock</li>
+                <li class="changis">chris rock</li>
+                <li class="changis">dave chapelle</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script src="js/styleInJs.js"></script>
+    <script>
+        // console.log('adding js inside html file');
+        // const student = {
+        //     name: 'Badar',
+        //     ID: 125,
+        //     study: function(time){
+        //         console.log('study kortese')
+        //     }
+        // }
+
+
+        const liCollection = document.getElementsByTagName('li')
+        // console.log(liCollection)
+        for (const li of liCollection) {
+            // console.log(li.innerText)
+        }
+
+        const allHeadings = document.getElementsByTagName('h1')
+        for (const h1 of allHeadings) {
+            // console.log(h1.innerText);
+        }
+
+        const places = document.getElementsByClassName('changis');
+        for (const place of places) {
+            // console.log(place.innerText);
+        }
+
+        const fruits_title = document.getElementById('fruits-title')
+        fruits_title.innerText = 'Fruits changed by JS';
+
+        const someLi = document.querySelectorAll('.class-container li');
+        for (const li of someLi) {
+            // console.log(li.innerText);
+        }
+        const firstLi = document.querySelector('.class-container li').style.backgroundColor = 'yellow'
+        console.log(firstLi)
+        const firsttLi = document.getElementById('fruits-title').style.textAlign = 'center'
+        // console.log(firsttLi)
+
+
+        const title = document.getElementById('fruits-title')
+
+        // title.getAttribute('id')
+        title.setAttribute('title', 'tooltip set by javascript')
+        //where to add
+        const placeList = document.querySelector('.class-container ul')
+
+        //what to be added
+        const li = document.createElement('li')
+        li.innerText = 'gajar nouka';
+
+        // add the child
+
+        placeList.appendChild(li)
+
+        const lastList = document.querySelector('.class-container ul li:second-child').style.backgroundColor = 'red';
+        // access last child
+
+        //add section and h1
+        // ... your existing code
+
+        const newSection = document.createElement('section');
+        const newH1 = document.createElement('h1');
+        newH1.innerHTML = `
+        <h1>My New Section</h1>
+        <h1>My New Section</h1>
+        <h1>My New Section</h1>
+        <h1>My New Section</h1>
+        `;
+        newSection.appendChild(newH1);
+
+        // Append the new section to the main element
+        document.querySelector('main').appendChild(newSection);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

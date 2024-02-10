@@ -1,0 +1,10 @@
+h1{
+    color: aqua;
+}
+section{
+    background-color: blue !important; 
+}
+
+.text-center{
+    text-align: center;
+}
